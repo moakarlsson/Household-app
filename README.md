@@ -5,4 +5,4 @@ A real-time household management API built with TypeScript and Node.js. Features
 Users can create or join a household using an invite code. All data is scoped per household to ensure privacy between different users.
 
 **Stack:** 
-- TypeScript · Express · MySQL · Socket.io · bcrypt · Railway# Household-app
+- TypeScript · Express · MySQL · Socket.io · bcrypt · Railway
