@@ -5,4 +5,8 @@ A real-time household management API built with Node.js. Features include shared
 Users can create or join a household using an invite code. All data is scoped per household to ensure privacy between different users.
 
 **Stack:** 
-- · Express · MySQL · Socket.io · bcrypt · Railway
+-  Express
+-  MySQL 
+-  Socket.io 
+-  bcrypt 
+-  Railway
