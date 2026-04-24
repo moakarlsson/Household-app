@@ -1,4 +1,4 @@
-# household-app
+# Household-app
 
 A real-time household management API built with TypeScript and Node.js. Features include shared shopping lists with live updates via WebSockets, weekly meal planning, and automatic grocery list generation from planned recipes.
 
