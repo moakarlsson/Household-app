@@ -1,0 +1,33 @@
+{
+  "name": "household-app",
+  "version": "1.0.0",
+  "description": "A real-time household management API built with TypeScript and Node.js. Features include shared shopping lists with live updates via WebSockets, weekly meal planning, and automatic grocery list generation from planned recipes.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moakarlsson/Household-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/moakarlsson/Household-app/issues"
+  },
+  "homepage": "https://github.com/moakarlsson/Household-app#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.4.0",
+    "express-session": "^1.19.0",
+    "helmet": "^8.1.0",
+    "mysql2": "^3.22.2",
+    "nodemon": "^3.1.14",
+    "socket.io": "^4.8.3"
+  }
+}
