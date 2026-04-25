@@ -52,7 +52,7 @@ router.post("/login", async (req,res) => {
         if (!match) {
             return res.status(401).json( {error: "Wrong username or password"});
         }
-        req.session.user = { id: user.id, name: user.name };
+        req.session.user = { id: user.id, name: user.name, household_id: user.household_id  };
         return res.status(200).json({ message: "Login successful!", name: user.name})
 
     } catch (error) {

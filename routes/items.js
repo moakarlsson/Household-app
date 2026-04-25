@@ -15,4 +15,26 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.post("/add", async (req,res) => {
+    try {
+        const { name, quantity, note } = req.body;
+        const household_id = req.session.user.household_id;
+        const[result] = await db.query (
+            "INSERT INTO item (name, household_id) VALUES (?,?)",
+            [name, household_id]
+        );
+        res.status(201).json({ message: "Item added!", insertId: result.insertId});  
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 export default router;
+
+/*CREATE TABLE item (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    checked BOOLEAN DEFAULT FALSE,
+    household_id INT NOT NULL,
+    FOREIGN KEY (household_id) REFERENCES household(id)
+);*/
