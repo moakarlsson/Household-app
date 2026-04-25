@@ -1,6 +1,7 @@
 import express from "express";
 import session from "express-session";
 import userRouter from "./routes/user.js";
+import householdRouter from "./routes/household.js";
 import itemsRouter from "./routes/items.js";
 import recipesRouter from "./routes/recipes.js";
 import mealplanRouter from "./routes/mealplan.js";
@@ -19,5 +20,6 @@ app.use("/", userRouter);
 app.use("/items", itemsRouter);    
 app.use("/recipes", recipesRouter); 
 app.use("/mealplan", mealplanRouter);
+app.use("/household", householdRouter);
 
 export default app;
