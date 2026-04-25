@@ -19,6 +19,10 @@ router.post("/add", async (req,res) => {
     try {
         const { name, quantity, note } = req.body;
         const household_id = req.session.user.household_id;
+
+        if (!name) {
+            return res.status(400).json({ error: "Name of item is required!"});
+        }
         const[result] = await db.query (
             "INSERT INTO item (name, household_id, quantity, note) VALUES (?,?,?,?)",
             [name, household_id, quantity || null, note || null]
