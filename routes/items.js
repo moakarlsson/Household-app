@@ -31,10 +31,3 @@ router.post("/add", async (req,res) => {
 
 export default router;
 
-/*CREATE TABLE item (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    checked BOOLEAN DEFAULT FALSE,
-    household_id INT NOT NULL,
-    FOREIGN KEY (household_id) REFERENCES household(id)
-);*/
