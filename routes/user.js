@@ -37,12 +37,35 @@ router.post("/", async (req,res) => {
 });
 // Log in a user
 router.post("/login", async (req,res) => {
+    const { name, password } = req.body;
+    try {
+        const [rows] = await db.query (
+            "SELECT * FROM user where name = ?",
+            [name]
+        )
+        if (rows.length === 0) {
+            return res.status(401).json({ error: "Wrong username or password"});
+        }
+        const user = rows[0];
+        const match = await bcrypt.compare(password, user.password);
 
-})
+        if (!match) {
+            return res.status(401).json( {error: "Wrong username or password"});
+        }
+        req.session.user = { id: user.id, name: user.name };
+        return res.status(200).json({ message: "Login successful!", name: user.name})
+
+    } catch (error) {
+        console.error("Login Error:", error);
+        res.status(500).json( { error: "Internal server error"})
+    }
+});
 //Log out a user
 router.post("/logout", async (req,res) => {
-
-})
+    req.session.destroy(() => {
+        res.status(200).json({ message: "Logout successful!"});
+    });
+});
 
 export default router;
-
+ 
