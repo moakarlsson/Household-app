@@ -16,7 +16,7 @@ app.use(session({
     cookie: { secure: process.env.NODE_ENV === 'production' }
 }));
 
-app.use("/", userRouter); 
+app.use("/user", userRouter); 
 app.use("/items", itemsRouter);    
 app.use("/recipes", recipesRouter); 
 app.use("/mealplan", mealplanRouter);
