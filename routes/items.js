@@ -20,8 +20,8 @@ router.post("/add", async (req,res) => {
         const { name, quantity, note } = req.body;
         const household_id = req.session.user.household_id;
         const[result] = await db.query (
-            "INSERT INTO item (name, household_id) VALUES (?,?)",
-            [name, household_id]
+            "INSERT INTO item (name, household_id, quantity, note) VALUES (?,?,?,?)",
+            [name, household_id, quantity, note]
         );
         res.status(201).json({ message: "Item added!", insertId: result.insertId});  
     } catch (error) {
