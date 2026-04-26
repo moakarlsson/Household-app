@@ -1,5 +1,6 @@
 import express from "express";
 import session from "express-session";
+import helmet from "helmet";
 import userRouter from "./routes/user.js";
 import householdRouter from "./routes/household.js";
 import itemsRouter from "./routes/items.js";
@@ -8,6 +9,7 @@ import mealplanRouter from "./routes/mealplan.js";
 
 const app = express();
 app.use(express.json());
+app.use(helmet());
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
