@@ -15,7 +15,7 @@ router.post("/", async (req,res) => {
             [invite_code]
         );
         if (households.length === 0) {
-            return res.status(404).json( {error: "Invalid code!"})
+            return res.status(404).json( {error: "Invalid invite-code!"})
         }
         const household_id = households[0].id;
 
